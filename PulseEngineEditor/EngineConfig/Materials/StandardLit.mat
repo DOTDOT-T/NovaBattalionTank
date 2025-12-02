@@ -1,0 +1,13 @@
+{
+    "albedo": "EngineConfig/Textures/albedo.jpg",
+    "color": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "guid": "",
+    "name": "StandardLit",
+    "normal": "EngineConfig/Textures/albedo.jpg",
+    "roughness": "EngineConfig/Textures/albedo.jpg",
+    "specular": 10.0
+}

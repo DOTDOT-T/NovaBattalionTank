@@ -1,0 +1,21 @@
+let fps -> 0.0
+function Initialization()
+{
+
+}
+
+function Update(copy deltatime)
+{
+    let fps -> 1 / deltatime
+}
+
+function Render()
+{
+}
+
+function RenderEditor()
+{
+    OpenTool("Engine Toolbox")
+    Text("engine FPS :", fps)
+    CloseTool()
+}
