@@ -1,5 +1,5 @@
 {
     "projectName": "NovaBattalionTank",
-    "enginePath": "D:/SVN/Eleves/dlexteriaque/PulseSoftware/PulseForgeTools/EngineBuilder/Build/Game.exe",
+    "enginePath": "D:/SVN/Eleves/dlexteriaque/PulseSoftware/PulseEngineSource/build/editor/Debug/PulseGame.exe",
     "projectDir": "D:/SVN/Eleves/dlexteriaque/PulseSoftware/PulseLauncher/build/Debug/Project/NovaBattalionTank"
 }
