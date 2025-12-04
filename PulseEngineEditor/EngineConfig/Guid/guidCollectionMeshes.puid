@@ -1,4 +1,5 @@
 {
     "0": "EngineConfig/models/Primitives/primitiveCube.pmesh",
-    "1": "EngineConfig/models/Primitives/primitiveSphere.pmesh"
+    "1": "EngineConfig/models/Primitives/primitiveSphere.pmesh",
+    "12225678899694062035": "Content/Models/wheels.fbx.pmesh"
 }

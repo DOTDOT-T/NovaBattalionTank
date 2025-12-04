@@ -1,3 +1,32 @@
 {
-    "Guid": "5122024525422412080"
+    "Guid": "5122024525422412080",
+    "Material": "10727569700941058425",
+    "Meshes": [
+        {
+            "Guid": "12225678899694062035",
+            "MeshPath": "Content/Models/wheels.fbx.pmesh",
+            "Name": "Content/Models/wheels.fbx.pmesh",
+            "Position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "Rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "Scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    ],
+    "Scripts": [
+        {
+            "Guid": 0,
+            "Name": "BoxCollider"
+        }
+    ]
 }
