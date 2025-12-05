@@ -2,8 +2,8 @@
     "albedo": "EngineConfig/Textures/albedo.jpg",
     "color": [
         1.0,
-        1.0,
-        1.0
+        0.0,
+        0.0
     ],
     "guid": "",
     "name": "StandardLit",
