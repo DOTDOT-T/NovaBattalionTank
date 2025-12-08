@@ -1,3 +1,6 @@
 {
-    "0": "EngineConfig/Textures/albedo.jpg"
+    "0": "EngineConfig/Textures/albedo.jpg",
+    "16233452770122522821": "Content/Models/Tanks/TT_checker_2048x2048_UV_GRID_Normal_OpenGL.png",
+    "18341653568718640293": "Content/Models/Tanks/TT_checker_2048x2048_UV_GRID_Base_color.png",
+    "9690107866998555192": "Content/Models/Tanks/TT_checker_2048x2048_UV_GRID_Roughness.png"
 }

@@ -1,7 +1,9 @@
 {
+    "12744745831499918817": "Content\\Entities\\PlayerTank.pEntity",
     "15108808711762115660": "Entities/simpleActor.pEntity",
     "16688298224646234728": "Entities/primitiveCube.pEntity",
     "3883839967002569343": "Entities/simpleActor.pEntity",
+    "4198049985574660544": "EngineConfig\\models\\Primitives\\Sphere.pEntity",
     "4999045609554485032": "Entities/primitiveCube.pEntity",
     "5122024525422412080": "Content\\Entities\\Floor.pEntity"
 }

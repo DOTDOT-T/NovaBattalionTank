@@ -1,0 +1,14 @@
+{
+    "albedo": "Content/Models/Tanks/TT_checker_2048x2048_UV_GRID_Base_color.png",
+    "color": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "flip": true,
+    "guid": "13423731875290461861",
+    "name": "PlayerTank",
+    "normal": "Content/Models/Tanks/TT_checker_2048x2048_UV_GRID_Normal_OpenGL.png",
+    "roughness": "Content/Models/Tanks/TT_checker_2048x2048_UV_GRID_Roughness.png",
+    "specular": 10.0
+}

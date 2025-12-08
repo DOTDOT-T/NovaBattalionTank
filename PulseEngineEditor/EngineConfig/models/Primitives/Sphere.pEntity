@@ -1,0 +1,32 @@
+{
+    "Guid": "4198049985574660544",
+    "Material": "10727569700941058425",
+    "Meshes": [
+        {
+            "Guid": "1",
+            "MeshPath": "EngineConfig/models/Primitives/primitiveSphere.pmesh",
+            "Name": "EngineConfig/models/Primitives/primitiveSphere.pmesh",
+            "Position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "Rotation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "Scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+    ],
+    "Scripts": [
+        {
+            "Guid": 0,
+            "Name": "BoxCollider"
+        }
+    ]
+}
