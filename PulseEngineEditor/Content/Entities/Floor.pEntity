@@ -1,18 +1,18 @@
 {
     "Guid": "5122024525422412080",
-    "Material": "10727569700941058425",
+    "Material": "17391338446044603841",
     "Meshes": [
         {
-            "Guid": "3944929387845440263",
-            "MeshPath": "Content/Models/chassis.fbx.pmesh",
-            "Name": "Content/Models/chassis.fbx.pmesh",
+            "Guid": "10188049581938817541",
+            "MeshPath": "Content/Models/Floor/tron grid floor.fbx.pmesh",
+            "Name": "Content/Models/Floor/tron grid floor.fbx.pmesh",
             "Position": [
                 0.0,
                 0.0,
                 0.0
             ],
             "Rotation": [
-                0.0,
+                90.0,
                 0.0,
                 0.0
             ],
