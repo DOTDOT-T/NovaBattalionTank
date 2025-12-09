@@ -13,7 +13,6 @@ void TankController::OnStart()
 
 void TankController::OnUpdate()
 {
-    // Your update code here
 }
 
 void TankController::OnRender()
