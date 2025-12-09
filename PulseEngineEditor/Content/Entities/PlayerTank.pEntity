@@ -27,6 +27,10 @@
         {
             "Guid": 0,
             "Name": "BoxCollider"
+        },
+        {
+            "Guid": 2789270957740525571,
+            "Name": "PulseScriptTankController"
         }
     ]
 }

@@ -3,7 +3,7 @@
 #include "PulseEngine/CustomScripts/IScripts.h"
 #include "Common/dllExport.h"
 
-class PULSE_ENGINE_DLL_API TankController : public IScript
+class TankController : public IScript
 {
     public:
         TankController()

@@ -1,9 +1,14 @@
 #include "PulseEngine/CustomScripts/IScripts.h"
 #include "TankController.h"
+#include "PulseEngine/API/EntityAPI/EntityApi.h"
+
+#include <iostream>
 
 void TankController::OnStart()
 {
-    // Your initialization code here
+    owner->SetColliderSize(PulseEngine::Vector3(3.0f,2.0f,3.5f));
+    owner->SetColliderMass(900.0f);
+    owner->SetColliderBody(1);
 }
 
 void TankController::OnUpdate()

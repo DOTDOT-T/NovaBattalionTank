@@ -1,9 +1,11 @@
 #include "PulseEngine/CustomScripts/IScripts.h"
 #include "FloorInit.h"
+#include "PulseEngine/API/EntityAPI/EntityApi.h"
 
 void FloorInit::OnStart()
 {
-    // Your initialization code here
+    owner->SetColliderSize(PulseEngine::Vector3(100.0f,0.2f,100.0f));
+    owner->SetColliderMass(900000.0f);
 }
 
 void FloorInit::OnUpdate()
