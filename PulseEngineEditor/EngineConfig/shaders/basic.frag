@@ -32,6 +32,8 @@ struct DirectionalLight
 
 uniform DirectionalLight dirLight;
 
+
+
 // === MATRIX HELPERS ===
 mat4 makeLookAt(vec3 eye, vec3 center, vec3 up)
 {
@@ -73,22 +75,45 @@ float CalculateDirectionalShadow(DirectionalLight light, vec3 fragPos, vec3 norm
     vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
     projCoords = projCoords * 0.5 + 0.5;
 
-    // outside light frustum
-    if (projCoords.x < 0.0 || projCoords.x > 1.0 ||
-        projCoords.y < 0.0 || projCoords.y > 1.0 ||
-        projCoords.z > 1.0)
+    // Reject fragments outside projection
+    if (projCoords.z > 1.0 || projCoords.x < 0.0 || projCoords.x > 1.0 ||
+        projCoords.y < 0.0 || projCoords.y > 1.0)
         return 0.0;
 
-    float closestDepth = texture(light.shadowMap, projCoords.xy).r;
+    // Correct light direction
+    vec3 lightDir = normalize(light.position - light.target);
+
+    // Normal-dependent depth bias
+    float bias = max(0.001 * (1.0 - dot(normal, -lightDir)), 0.0001);
+
     float currentDepth = projCoords.z;
 
-    // normal-dependent bias
-    vec3 lightDir = normalize(light.target - light.position);
-    float bias = max(0.0005 * (1.0 - dot(normal, lightDir)), 0.00005);
+    // PCF kernel
+    float shadow = 0.0;
+    vec2 texel = 1.0 / textureSize(light.shadowMap, 0);
 
-    float shadow = currentDepth - bias > closestDepth ? 1.0 : 0.0;
+    // Tunable softness (shadowRadius)
+    int kernelRadius = int(3);
+
+    int kernelSize = kernelRadius * 2 + 1;
+    int totalSamples = kernelSize * kernelSize;
+
+    for (int x = -kernelRadius; x <= kernelRadius; x++)
+    {
+        for (int y = -kernelRadius; y <= kernelRadius; y++)
+        {
+            vec2 offset = vec2(x, y) * texel;
+            float pcfDepth = texture(light.shadowMap, projCoords.xy + offset).r;
+
+            shadow += (currentDepth - bias > pcfDepth) ? 1.0 : 0.0;
+        }
+    }
+
+    shadow /= float(totalSamples);
     return shadow;
 }
+
+
 
 // === NORMAL MAPPING ===
 vec3 GetNormalFromMap(vec3 normal, vec3 tangent, vec3 bitangent)

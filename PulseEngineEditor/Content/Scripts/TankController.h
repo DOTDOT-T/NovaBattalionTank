@@ -3,6 +3,8 @@
 #include "PulseEngine/CustomScripts/IScripts.h"
 #include "Common/dllExport.h"
 
+class CameraAPI;
+
 class TankController : public IScript
 {
     public:
@@ -17,5 +19,9 @@ class TankController : public IScript
         void OnRender() override;
         void OnEditorDisplay() override;
         const char* GetName() const override;
+
+        CameraAPI* cam = nullptr;
+
+        bool cinematicMode = false;   
 };
 
