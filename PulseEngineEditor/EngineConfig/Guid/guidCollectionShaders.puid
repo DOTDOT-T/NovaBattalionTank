@@ -1,0 +1,17 @@
+{
+    "0": {
+        "frag": "EngineConfig/shaders/basic.frag",
+        "name": "Basic renderer",
+        "vert": "EngineConfig/shaders/basic.vert"
+    },
+    "1": {
+        "frag": "EngineConfig/shaders/toon.frag",
+        "name": "Toon renderer",
+        "vert": "EngineConfig/shaders/basic.vert"
+    },
+    "11997050079423501642": {
+        "frag": "Content/Shaders/Destroy.frag",
+        "name": "Destroy",
+        "vert": "Content/Shaders/Destroy.vert"
+    }
+}
