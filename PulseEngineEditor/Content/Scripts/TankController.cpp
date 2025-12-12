@@ -1,11 +1,11 @@
 #include "PulseEngine/CustomScripts/IScripts.h"
 #include "TankController.h"
 #include "PulseEngine/API/EntityAPI/EntityApi.h"
-#include "PulseEngine/API/GameEntity.h"
 #include "PulseEngine/API/CameraAPI/CameraAPI.h"
 #include "PulseEngine/API/InputAPI/InputAPI.h"
-#include "PulseEngine/core/Lights/Lights.h"
-#include "PulseEngine/core/Lights/DirectionalLight/DirectionalLight.h"
+// #include "PulseEngine/core/Lights/Lights.h"
+// #include "PulseEngine/core/Lights/DirectionalLight/DirectionalLight.h"
+#include "PulseEngine/core/Physics/PhysicAPI/PhysicAPI.h"
 
 #include <iostream>
 
@@ -13,8 +13,8 @@ void TankController::OnStart()
 {
     owner->SetColliderSize(PulseEngine::Vector3(3.0f,2.0f,3.5f));
     owner->SetColliderMass(900.0f);
-    owner->SetColliderBody(1);
-    cam = PulseEngine::GameEntity::GetActiveCamera();
+    PhysicAPI::SetBodyType(owner, true);
+    // cam = PulseEngine::GameEntity::GetActiveCamera();
 }
 
 void TankController::OnUpdate()
@@ -147,8 +147,8 @@ void TankController::OnUpdate()
     }
 
     
-    PulseEngineInstance->lights[0]->SetPosition(tankPos + PulseEngine::Vector3(5.0f, 5.0f, 7.0f));
-    dynamic_cast<DirectionalLight*>(PulseEngineInstance->lights[0])->target = tankPos;
+    // PulseEngineInstance->lights[0]->SetPosition(tankPos + PulseEngine::Vector3(5.0f, 5.0f, 7.0f));
+    // dynamic_cast<DirectionalLight*>(PulseEngineInstance->lights[0])->target = tankPos;
 
     lastMouse = mouse;
 }

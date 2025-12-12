@@ -1,11 +1,14 @@
 #include "PulseEngine/CustomScripts/IScripts.h"
 #include "FloorInit.h"
 #include "PulseEngine/API/EntityAPI/EntityApi.h"
+#include "PulseEngine/core/Physics/PhysicAPI/PhysicAPI.h"
 
 void FloorInit::OnStart()
 {
     owner->SetColliderSize(PulseEngine::Vector3(100.0f,0.2f,100.0f));
     owner->SetColliderMass(900000.0f);
+
+    PhysicAPI::SetBodyType(owner, false);
 }
 
 void FloorInit::OnUpdate()
