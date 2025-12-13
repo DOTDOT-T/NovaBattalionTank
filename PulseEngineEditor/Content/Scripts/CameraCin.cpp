@@ -1,16 +1,14 @@
 #include "PulseEngine/CustomScripts/IScripts.h"
-#include "TankController.h"
+#include "CameraCin.h"
 #include "PulseEngine/API/EntityAPI/EntityApi.h"
 #include "PulseEngine/API/CameraAPI/CameraAPI.h"
 #include "PulseEngine/API/InputAPI/InputAPI.h"
-// #include "PulseEngine/core/Lights/Lights.h"
-// #include "PulseEngine/core/Lights/DirectionalLight/DirectionalLight.h"
 #include "PulseEngine/core/Physics/PhysicAPI/PhysicAPI.h"
 #include "PulseEngine/API/GameEntity.h"
 
 #include <iostream>
 
-void TankController::OnStart()
+void CameraCin::OnStart()
 {
     PhysicAPI::SetBodyType(owner, true);
     PhysicAPI::SetBodySize(owner, PulseEngine::Vector3(1.5f,1.0f, 1.5f));
@@ -18,7 +16,7 @@ void TankController::OnStart()
 
 }
 
-void TankController::OnUpdate()
+void CameraCin::OnUpdate()
 {
     static PulseEngine::Vector2 lastMouse(InputAPI::getMouseX(), InputAPI::getMouseY());
     static PulseEngine::Vector3 cinematicTarget = PulseEngine::Vector3(0.0f); 
@@ -31,14 +29,14 @@ void TankController::OnUpdate()
     PulseEngine::Vector2 mouse(InputAPI::getMouseX(), InputAPI::getMouseY());
     PulseEngine::Vector2 delta = mouse - lastMouse;
 
-    const float moveSpeed = 0.1f;
+    const float moveSpeed = 1.0f;
     static float rot = 0.0f;
 
     
     if (InputAPI::isActionDown(1)) PhysicAPI::AddVelocity(owner, owner->GetTransform()->GetForward() * moveSpeed);
     if (InputAPI::isActionDown(0)) PhysicAPI::AddVelocity(owner, owner->GetTransform()->GetForward() * -moveSpeed);
-    if (InputAPI::isActionDown(2)) PhysicAPI::AddAngularVelocityFromVectors(owner, owner->GetTransform()->GetForward(), owner->GetTransform()->GetRight());
-    if (InputAPI::isActionDown(3)) PhysicAPI::AddAngularVelocityFromVectors(owner, owner->GetTransform()->GetForward(), owner->GetTransform()->GetRight() * -1.0f);
+    // if (InputAPI::isActionDown(3)) rot -= 25.0f * PulseEngineInstance->GetDeltaTime();
+    // if (InputAPI::isActionDown(2)) rot += 25.0f * PulseEngineInstance->GetDeltaTime();
 
     
     if (InputAPI::isActionDown(4)) cinematicMode = !cinematicMode;        
@@ -68,7 +66,7 @@ void TankController::OnUpdate()
         // );
         // const float smoothSpeed = 5.0f;
         // PulseEngine::Vector3 newPos = currentPos + (targetPoint - currentPos) * (smoothSpeed * PulseEngineInstance->GetDeltaTime());
-        PulseEngine::Vector3 newPos = tankPos + PulseEngine::Vector3(5.0f, 5.0f, 5.0f);
+        PulseEngine::Vector3 newPos = tankPos + PulseEngine::Vector3(-5.0f, 5.0f, -5.0f);
         cam->SetPosition(newPos);
         cam->SetLookAt(tankPos);
     }
@@ -156,24 +154,24 @@ void TankController::OnUpdate()
 }
 
 
-void TankController::OnRender()
+void CameraCin::OnRender()
 {
 
 }
 
-void TankController::OnEditorDisplay()
+void CameraCin::OnEditorDisplay()
 {
     
 }
 
-const char* TankController::GetName() const
+const char* CameraCin::GetName() const
 {
-    return "PulseScriptTankController";
+    return "PulseScriptCameraCin";
 }
 
 
-extern "C" __declspec(dllexport) IScript* PulseScriptTankController()
+extern "C" __declspec(dllexport) IScript* PulseScriptCameraCin()
 {
-    return new TankController();
+    return new CameraCin();
 }
 

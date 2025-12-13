@@ -10,6 +10,6 @@
     "name": "PlayerTank",
     "normal": "Content/Models/Tanks/TT_checker_2048x2048_UV_GRID_Normal_OpenGL.png",
     "roughness": "Content/Models/Tanks/TT_checker_2048x2048_UV_GRID_Roughness.png",
-    "shader": "1",
+    "shader": "0",
     "specular": 10.0
 }

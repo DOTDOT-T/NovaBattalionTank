@@ -5,10 +5,8 @@
 
 void FloorInit::OnStart()
 {
-    owner->SetColliderSize(PulseEngine::Vector3(100.0f,0.2f,100.0f));
-    owner->SetColliderMass(900000.0f);
-
-    PhysicAPI::SetBodyType(owner, false);
+    EDITOR_LOG("x : " << owner->GetTransform()->scale.x << " y : " << owner->GetTransform()->scale.y << " z : " << owner->GetTransform()->scale.z);
+    PhysicAPI::SetBodySize(owner, PulseEngine::Vector3(std::abs(owner->GetTransform()->scale.x),0.1f, std::abs(owner->GetTransform()->scale.z)));
 }
 
 void FloorInit::OnUpdate()
