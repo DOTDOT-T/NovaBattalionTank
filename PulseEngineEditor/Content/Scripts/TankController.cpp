@@ -5,21 +5,25 @@
 #include "PulseEngine/API/InputAPI/InputAPI.h"
 // #include "PulseEngine/core/Lights/Lights.h"
 // #include "PulseEngine/core/Lights/DirectionalLight/DirectionalLight.h"
-#include "PulseEngine/core/Physics/PhysicAPI/PhysicAPI.h"
+#include "PulseEngine/API/PhysicAPI/PhysicAPI.h"
 #include "PulseEngine/API/GameEntity.h"
 
 #include <iostream>
 
 void TankController::OnStart()
 {
-    PhysicAPI::SetBodyType(owner, true);
-    PhysicAPI::SetBodySize(owner, PulseEngine::Vector3(1.5f,1.0f, 1.5f));
-    cam = PulseEngine::GameEntity::GetActiveCamera();
+
 
 }
 
 void TankController::OnUpdate()
 {
+    if(!cam)
+    {
+        PhysicAPI::SetBodyType(owner, true);
+        PhysicAPI::SetBodySize(owner, PulseEngine::Vector3(1.5f,1.0f, 1.5f));
+        cam = PulseEngine::GameEntity::GetActiveCamera();
+    }
     static PulseEngine::Vector2 lastMouse(InputAPI::getMouseX(), InputAPI::getMouseY());
     static PulseEngine::Vector3 cinematicTarget = PulseEngine::Vector3(0.0f); 
     static int cinematicStage = 0;          

@@ -3,7 +3,7 @@
 #include "PulseEngine/API/EntityAPI/EntityApi.h"
 #include "PulseEngine/API/CameraAPI/CameraAPI.h"
 #include "PulseEngine/API/InputAPI/InputAPI.h"
-#include "PulseEngine/core/Physics/PhysicAPI/PhysicAPI.h"
+#include "PulseEngine/API/PhysicAPI/PhysicAPI.h"
 #include "PulseEngine/API/GameEntity.h"
 
 #include <iostream>
